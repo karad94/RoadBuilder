@@ -1,8 +1,8 @@
 import os
 import shutil
-from PyQt5.QtWidgets import QPushButton, QLabel, QComboBox, QDialog, QWidget, QMessageBox, QShortcut, QGraphicsScene, QGraphicsView, QMainWindow
-from PyQt5.QtGui import QFont, QPainter, QTransform, QKeySequence
-from PyQt5.QtSvg import QSvgRenderer, QSvgWidget
+from PyQt5.QtWidgets import QWidget, QMessageBox, QShortcut, QGraphicsScene, QGraphicsView, QMainWindow
+from PyQt5.QtGui import QFont, QTransform, QKeySequence
+from PyQt5.QtSvg import QSvgWidget
 from PyQt5 import QtCore
 
 from track_generator.generator import generate_track

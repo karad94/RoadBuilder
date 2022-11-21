@@ -1,7 +1,5 @@
 import math
 
-from PyQt5.QtWidgets import QMessageBox
-
 def get_line_dict(start, direction, length, factor):
     """
     Return dictionary for straight

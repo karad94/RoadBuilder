@@ -1,6 +1,3 @@
-import os
-from textwrap import indent
-
 from xml.etree import cElementTree as ET, ElementTree
 from xml.etree import ElementTree
 from xml.dom import minidom

@@ -1,8 +1,8 @@
-import sys, os
+import sys
 import math
 
 from PyQt5 import QtGui, QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QLineEdit, QToolButton, QMessageBox, QFileDialog, QFormLayout, QGroupBox, QShortcut, QGraphicsScene, QGraphicsView, QWidget, QScrollArea
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QLineEdit, QMessageBox, QFileDialog, QFormLayout, QGroupBox, QShortcut, QWidget
 from PyQt5.QtGui import QPainter, QPen, QFont, QPainterPath, QPolygonF, QTransform, QKeySequence
 from PyQt5.QtCore import Qt, QPoint, QLineF
 
@@ -11,7 +11,7 @@ import parking_area, traffic_island, intersection, select_line_style
 from get_road_element_dict import *
 from python_writer_reader import python_reader, python_writer
 from xml_writer_reader import xml_writer, xml_reader
-from preview_window import xml_preview, PreviewWindow
+from preview_window import xml_preview
 
 class Window(QMainWindow):
     
@@ -262,9 +262,6 @@ class Window(QMainWindow):
         Asks the user for a python file.
         Trys to call the function python_reader.
         """
-        if not len(self.road) > 1:
-            QMessageBox.about(self, 'Warning', 'Es ist keine Strecke vorhanden!')
-            return
         file, _ = QFileDialog.getOpenFileName(self, 'Wählen Sie die Datei aus.','/opt/.ros/kitcar-gazebo-simulation/simulation/models/env_db','Python Files (*.py)')
         if file == '':
             return       
