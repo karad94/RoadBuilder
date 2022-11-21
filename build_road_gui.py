@@ -101,7 +101,7 @@ class Window(QMainWindow):
         
         kitcar_form = QFormLayout()
         kitcar_form.setVerticalSpacing(0)
-        kitcar_form.addRow(QLabel('KitCar:'))
+        kitcar_form.addRow(QLabel('KITcar:'))
         kitcar_form.addRow(save_python_button, load_python_button)
 
         self.kitcar_form_group_box = QGroupBox(self)
@@ -262,6 +262,9 @@ class Window(QMainWindow):
         Asks the user for a python file.
         Trys to call the function python_reader.
         """
+        if not len(self.road) > 1:
+            QMessageBox.about(self, 'Warning', 'Es ist keine Strecke vorhanden!')
+            return
         file, _ = QFileDialog.getOpenFileName(self, 'Wählen Sie die Datei aus.','/opt/.ros/kitcar-gazebo-simulation/simulation/models/env_db','Python Files (*.py)')
         if file == '':
             return       
