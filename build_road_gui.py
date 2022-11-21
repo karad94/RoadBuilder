@@ -307,6 +307,9 @@ class Window(QMainWindow):
             QMessageBox.about(self, 'Error', f'Die Strecke konnte nicht geladen werden.\nFehlermeldung:\n{e}')
     
     def xml_preview_button_clicked(self):
+        if not len(self.road) > 1:
+            QMessageBox.about(self, 'Warning', 'Es ist keine Strecke vorhanden!')
+            return
         xml_preview(self)
     
     def line_button_clicked(self):
